@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   # root "posts#index"
   get "/all_products", controller: "products", action: "all_products_method"
 
-  get "/one_product", controller: "products", action: "one_product_method"
+  get "/one_product/:id", controller: "products", action: "one_product_method"
 end
