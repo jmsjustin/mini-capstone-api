@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  post "/users" => "users#create"
+
   get "/products" => "products#all_products_method"
   post "/products" => "products#create"
   get "/products/:id" => "products#one_product_method"
