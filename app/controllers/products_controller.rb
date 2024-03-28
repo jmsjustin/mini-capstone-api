@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
-  def one_product_method
+  before_action :authenticate_admin, except: [:index, :show]
+
+  def show
     @product = Product.find_by(id: params["id"])
     render :show
   end
@@ -19,7 +21,7 @@ class ProductsController < ApplicationController
     end
   end
 
-  def all_products_method
+  def index
     @products = Product.all
     render :index
   end
